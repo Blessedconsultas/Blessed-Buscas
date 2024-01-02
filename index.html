@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blessed Buscas</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff5252;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container {
+            display: none;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        #container {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .botoes-consulta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .consulta-btn {
+            background-color: #ff5252;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .consulta-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container" id="login-container">
+        <!-- Tela de login -->
+        <h1>Tela de Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuário">
+            <br>
+            <input type="password" id="password" placeholder="Senha">
+            <br>
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+
+    <div id="container">
+        <!-- Conteúdo da página principal -->
+        <h1>Blessed Buscas</h1>
+        <div class="botoes-consulta">
+            <button class="consulta-btn" onclick="openPage('consulta_cep.html')">Consultar CEP</button>
+            <button class="consulta-btn" onclick="openPage('consulta_ddd.html')">Consultar DDD</button>
+            <button class="consulta-btn" onclick="openPage('consulta_ip.html')">Consultar IP</button>
+        </div>
+    </div>
+
+    <script>
+        function openPage(page) {
+            window.open(page);
+        }
+
+        // Mostrar tela de login e ocultar página principal inicialmente
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('container').style.display = 'none';
+
+        // Lógica de login (adapte conforme necessário)
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Aqui você colocaria a lógica de verificação do login
+            // Por exemplo, verificar se as credenciais estão corretas
+
+            // Após verificar as credenciais, mostrar a página principal se o login for bem-sucedido
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('container').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
